@@ -84,6 +84,10 @@ function CalculateResults() {
 
         }
 
+function switchit() {
+    document.getElementById("lendesc").innerHTML="Length (in.)";
+}
+
 
 
 
