@@ -29,8 +29,8 @@
     <h1> Soap Sizer </h1> 
     <P> Switch to imperial ==>
       <!-- Rounded switch -->
-      <label class="switch">
-        <input type="checkbox" onclick="switchit">
+      <label class="switch"> 
+        <input type="checkbox" onclick="switchit()" id="metricswitch">
         <span class="slider round"></span>
       </label>
     </P>
@@ -48,11 +48,11 @@
    
    
     <table border-collapse: colapse>
-      <tr><td style=text-align:right;><p id="lendesc"></p> </td><td> <input Name=Length1 id=Length1 ></td></tr>
-      <tr><td style=text-align:right;>Width (cm): </td><td><input Name=Width1 id=Width1 ></td></tr>
-      <tr><td style=text-align:right;>Height (cm): </td><td><input Name=Height1 id=Height1 ></td></tr>
-      <tr><td style=text-align:right;>Lye Conc.(%): </td><td><input Name=LyeConc1 id=LyeConc1 type="number"></td></tr>
-      <tr><td style=text-align:right;>SuperFat(%): </td><td><input Name=Superfat1 id=Superfat1 type="number"></td></tr>
+      <tr><td style=text-align:right; id="lendesc">Length (cm.): </td>     <td> <input Name=Length1 id=Length1 ></td></tr>
+      <tr><td style=text-align:right; id="widthdesc">Width (cm.): </td>    <td><input Name=Width1 id=Width1 ></td></tr>
+      <tr><td style=text-align:right; id="heightdesc">Height (cm.): </td>  <td><input Name=Height1 id=Height1 ></td></tr>
+      <tr><td style=text-align:right;>Lye Conc.(%): </td>                 <td><input Name=LyeConc1 id=LyeConc1 type="number"></td></tr>
+      <tr><td style=text-align:right;>SuperFat(%): </td>                  <td><input Name=Superfat1 id=Superfat1 type="number"></td></tr>
     </table>
     </br>     
     </br> 

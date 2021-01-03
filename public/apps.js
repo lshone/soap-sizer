@@ -74,18 +74,52 @@ function CalculateResults() {
             
             var voln = (a * b  * c) ;
             var ration = matrix[d-20][e];        
-            var oilgrn = ration * voln;
             
-            console.log(ration);
+            
+            var checkBox = document.getElementById("metricswitch");
+            if (checkBox.checked == true){
+                var suf1 = " ci.";
+                var suf2 = " oz/ci.";
+                var ration = ration * .578;
+                var oilgrn = ration * voln;;
+                var suf3 = " ounces ";
+            }
+            else{
+                
+                var suf1 = " cm3.";
+                var suf2 = " gr/cm3.";
+                var suf3 = " grams ";
+                var oilgrn = ration * voln;
+            }
 
-            document.getElementById("result1").innerHTML = "Soap mold volume is ".concat(voln.toFixed(2) ," cm3");
-            document.getElementById("result2").innerHTML = "Ratio of oil weight to volume is ".concat(ration.toFixed(2)," gr/cm3");
-            document.getElementById("result3").innerHTML = oilgrn.toFixed(0).concat(" grams of oil is required");
+
+            document.getElementById("result1").innerHTML = "Soap mold volume is ".concat(voln.toFixed(2) ,suf1);
+            document.getElementById("result2").innerHTML = "Ratio of oil weight to volume is ".concat(ration.toFixed(2),suf2);
+            document.getElementById("result3").innerHTML = oilgrn.toFixed(0).concat(suf3," of oils are required");
 
         }
 
 function switchit() {
-    document.getElementById("lendesc").innerHTML="Length (in.)";
+
+  // Get the checkbox
+    var checkBox = document.getElementById("metricswitch");
+    var lendesc = "Length ";
+    var widthdesc = "Width ";
+    var heightdesc = "Height ";
+    var units = "(cm.): ";
+  
+  // If the checkbox is checked, display the output text
+
+  if (checkBox.checked == true){
+        units = "(in.): "; 
+    } 
+    else {
+        units = "(cm.):";
+    }
+
+    document.getElementById("lendesc").innerHTML=lendesc.concat(units);
+    document.getElementById("widthdesc").innerHTML=widthdesc.concat(units);
+    document.getElementById("heightdesc").innerHTML=heightdesc.concat(units);
 }
 
 
