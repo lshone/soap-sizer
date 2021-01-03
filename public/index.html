@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.2.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <!-- <script defer src="/__/firebase/8.2.1/firebase-auth.js"></script>
+  
+    <script defer src="/__/firebase/8.2.1/firebase-messaging.js"></script>
+
+    <script defer src="/__/firebase/8.2.1/firebase-functions.js"></script> -->
+    
+    <!-- <script defer src="/__/firebase/8.2.1/firebase-storage.js"></script>
+       <script defer src="/__/firebase/8.2.1/firebase-firestore.js"></script> 
+    
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+  </head>
+
+  
+  <body>
+    <h1> Soap Sizer </h1>
+    
+    <script src="apps.js"></script>
+
+<!--     <button onclick="GoogleLogin()">
+      Login with Google
+      </button>
+  
+    <button onclick="GoogleLogout()">
+      Logout with Google
+      </button>
+ -->    
+   
+   
+    <table border-collapse: colapse>
+      <tr><td style=text-align:right;>Length (cm): </td><td> <input Name=Length1 id=Length1 ></td></tr>
+      <tr><td style=text-align:right;>Width (cm): </td><td><input Name=Width1 id=Width1 ></td></tr>
+      <tr><td style=text-align:right;>Height (cm): </td><td><input Name=Height1 id=Height1 ></td></tr>
+      <tr><td style=text-align:right;>Lye Conc.(%): </td><td><input Name=LyeConc1 id=LyeConc1 type="number"></td></tr>
+      <tr><td style=text-align:right;>SuperFat(%): </td><td><input Name=Superfat1 id=Superfat1 type="number"></td></tr>
+    </table>
+    </br>     
+    </br> 
+
+    <button onclick="CalculateResults()">
+      Calculate Results
+      </button>
+    </br>     
+    </br>
+      
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+
+
+  </body>
+</html>
