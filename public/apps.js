@@ -81,7 +81,7 @@ function CalculateResults() {
                 var suf1 = " ci.";
                 var suf2 = " oz/ci.";
                 var ration = ration * .578;
-                var oilgrn = ration * voln;;
+                var oilgrn = ration * voln;
                 var suf3 = " ounces ";
             }
             else{
