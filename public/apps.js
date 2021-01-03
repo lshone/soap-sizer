@@ -95,7 +95,7 @@ function CalculateResults() {
 
             document.getElementById("result1").innerHTML = "Soap mold volume is ".concat(voln.toFixed(2) ,suf1);
             document.getElementById("result2").innerHTML = "Ratio of oil weight to volume is ".concat(ration.toFixed(2),suf2);
-            document.getElementById("result3").innerHTML = oilgrn.toFixed(0).concat(suf3," of oils are required");
+            document.getElementById("result3").innerHTML = oilgrn.toFixed(0).concat(suf3," of oils are required.");
 
         }
 
