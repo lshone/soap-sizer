@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", Event => {
     const app = firebase.app();
- 
-    
-    console.log(app)
+    var inputs = document.getElementById("metricswitch");
+    inputs.checked = false;   
 });
 
 function GoogleLogin() {
@@ -63,11 +62,11 @@ function CalculateResults() {
                 [0.78, 0.78, 0.78, 0.78, 0.78, 0.78, 0.78, 0.78, 0.78, 0.79, 0.79]
               ];
     
-            var a = document.getElementById("Length1").value;
-            var b = document.getElementById("Width1").value;
-            var c = document.getElementById("Height1").value;
-            var d = document.getElementById("LyeConc1").value;
-            var e = document.getElementById("Superfat1").value; 
+            var a = document.getElementById("length1").value;
+            var b = document.getElementById("width1").value;
+            var c = document.getElementById("height1").value;
+            var d = document.getElementById("lyeconc1").value;
+            var e = document.getElementById("superfat1").value; 
             
             var voln = (a * b  * c) ;
             var ration = matrix[d-20][e];        
@@ -90,8 +89,15 @@ function CalculateResults() {
 
             document.getElementById("result1").innerHTML = "Soap mold volume is ".concat(voln.toFixed(2) ,suf1);
             document.getElementById("result2").innerHTML = "Ratio of oil weight to volume is ".concat(ration.toFixed(2),suf2);
-            document.getElementById("result3").innerHTML = oilgrn.toFixed(2).concat(suf3," of oils are required.");
 
+            var checkBox = document.getElementById("metricswitch");
+            if (checkBox.checked == true){
+                document.getElementById("result3").innerHTML = oilgrn.toFixed(2).concat(suf3," of oils are required.");    
+            }    
+            else{
+                document.getElementById("result3").innerHTML = oilgrn.toFixed(0).concat(suf3," of oils are required.");
+            }    
+            
         }
 
 function switchit() {
@@ -102,16 +108,37 @@ function switchit() {
     var widthdesc = "Width ";
     var heightdesc = "Height ";
     var units = "(cm.): ";
-  
+    var metricswitchdesc = "Switch to Imperial ==>";
+    var length1n = document.getElementById("length1").value;
+    var width1n = document.getElementById("width1").value;
+    var height1n = document.getElementById("height1").value;
+    // console.log(length1n.value)
+
+
   // If the checkbox is checked, display the output text
 
   if (checkBox.checked == true){
         units = "(in.): ";
+        metricswitchdesc = "Switch to Metric ===>";
+        length1n = length1n / 2.54;
+        width1n = width1n / 2.54;
+        height1n = height1n / 2.54;
     } 
     else {
         units = "(cm.):";
+        metricswitchdesc = "Switch to Imperial ==>";
+        length1n = length1n * 2.54;
+        width1n = width1n * 2.54;
+        height1n = height1n * 2.54;
     }
 
+    // console.log(length1n.value)
+
+    document.getElementById("length1").value=length1n.toFixed(3);
+    document.getElementById("width1").value=width1n.toFixed(3);
+    document.getElementById("height1").value=height1n.toFixed(3);
+
+    document.getElementById("metricswitchdesc").innerHTML=metricswitchdesc;
     document.getElementById("lendesc").innerHTML=lendesc.concat(units);
     document.getElementById("widthdesc").innerHTML=widthdesc.concat(units);
     document.getElementById("heightdesc").innerHTML=heightdesc.concat(units);

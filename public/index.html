@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Simple Soap Volume Calculator</title>
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/8.2.1/firebase-app.js"></script>
@@ -24,17 +24,19 @@
     <link rel="stylesheet" href="app.css" type="text/css">
   </head>
 
-  
   <body>
     <h1> Soap Sizer </h1> 
     <P> 
-      Switch to imperial ==> 
-   
-      <!-- Rounded switch -->
-      <label class="switch"> 
-        <input type="checkbox" onclick="switchit()" id="metricswitch">
-        <span class="slider round"></span>
-      </label>
+      <table>
+        <tr>
+          <td id="metricswitchdesc"> Switch to imperial ==></td>
+          <td><label class="switch">
+              <input type="checkbox" onclick="switchit()" id="metricswitch">
+              <span class="slider round"></span>
+            </label>
+          </td>
+        </tr>
+      </table>
     </P>
 
     <script src="apps.js"></script>
@@ -47,14 +49,24 @@
       Logout with Google
       </button>
  -->    
-   
-   
+
     <table border-collapse: colapse>
-      <tr><td style=text-align:right; id="lendesc">Length (cm.): </td>     <td> <input Name=Length1 id=Length1 ></td></tr>
-      <tr><td style=text-align:right; id="widthdesc">Width (cm.): </td>    <td><input Name=Width1 id=Width1 ></td></tr>
-      <tr><td style=text-align:right; id="heightdesc">Height (cm.): </td>  <td><input Name=Height1 id=Height1 ></td></tr>
-      <tr><td style=text-align:right;>Lye Conc.(%): </td>                 <td><input Name=LyeConc1 id=LyeConc1 type="number"></td></tr>
-      <tr><td style=text-align:right;>SuperFat(%): </td>                  <td><input Name=Superfat1 id=Superfat1 type="number"></td></tr>
+      <tr><td style=text-align:right; id="lendesc">Length (cm.): </td>     
+          <td> <input Name=Length1 id="length1" value=10.000></td></tr>
+
+      <tr><td style=text-align:right; id="widthdesc">Width (cm.): </td>
+          <td><input Name=Width1 id="width1" value="10.000"></td></tr>
+
+      <tr><td style=text-align:right; id="heightdesc">Height (cm.): </td>
+          <td><input Name=Height1 id="height1" value="10.000"></td></tr>
+
+      <tr><td style=text-align:right;>Lye Conc.(%): </td>
+          <td><input Name=LyeConc1 id="lyeconc1" type="number" value="30"></td>
+          <td>Valid values are 20-50</td></tr>
+
+      <tr><td style=text-align:right;>SuperFat(%): </td>
+          <td><input Name=Superfat1 id="superfat1" type="number" value="5"></td>
+          <td>Valid values are 0-10</td></tr>
     </table>
     </br>     
     </br> 
@@ -68,7 +80,6 @@
     <p id="result1"></p>
     <p id="result2"></p>
     <p id="result3"></p>
-
 
   </body>
 </html>
