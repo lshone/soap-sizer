@@ -142,4 +142,6 @@ function switchit() {
     document.getElementById("lendesc").innerHTML=lendesc.concat(units);
     document.getElementById("widthdesc").innerHTML=widthdesc.concat(units);
     document.getElementById("heightdesc").innerHTML=heightdesc.concat(units);
+
+    CalculateResults();
 }
