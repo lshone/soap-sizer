@@ -79,8 +79,7 @@ function CalculateResults() {
                 var oilgrn = ration * voln;
                 var suf3 = " ounces ";
             }
-            else{
-                
+            else{      
                 var suf1 = " cm3.";
                 var suf2 = " gr/cm3.";
                 var suf3 = " grams ";
