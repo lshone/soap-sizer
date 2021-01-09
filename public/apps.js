@@ -2,24 +2,9 @@ document.addEventListener("DOMContentLoaded", Event => {
     const app = firebase.app();
     var inputs = document.getElementById("metricswitch");
     inputs.checked = false;   
+
+    //CalculateResults;
 });
-
-function GoogleLogin() {
-
-    const provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider)
-        .then (result =>{
-            const user = result.user;
-           /* document.write(`Hello + $user{displayname}`);
-           */ 
-           console.log(user)
-        })
-        .catch(console.log)        
-}
-
-function GoogleLogout() {
-    auth.signout();
-}
 
 function CalculateResults() {
     // const db = firebase.firestore();
@@ -27,120 +12,109 @@ function CalculateResults() {
     // RatioArray.get()
     //     .then(doc => {
     //         const data = doc.data();
-           
-            var matrix = [
-                [0.58, 0.58, 0.58, 0.59, 0.59, 0.59, 0.59, 0.60, 0.60, 0.60, 0.60],
-                [0.59, 0.59, 0.60, 0.60, 0.60, 0.60, 0.61, 0.61, 0.61, 0.61, 0.61],
-                [0.60, 0.61, 0.61, 0.61, 0.61, 0.61, 0.62, 0.62, 0.62, 0.62, 0.63],
-                [0.62, 0.62, 0.62, 0.62, 0.62, 0.63, 0.63, 0.63, 0.63, 0.63, 0.64],
-                [0.63, 0.63, 0.63, 0.63, 0.63, 0.64, 0.64, 0.64, 0.64, 0.64, 0.65],
-                [0.64, 0.64, 0.64, 0.64, 0.64, 0.65, 0.65, 0.65, 0.65, 0.65, 0.66],
-                [0.64, 0.65, 0.65, 0.65, 0.65, 0.65, 0.66, 0.66, 0.66, 0.66, 0.66],
-                [0.65, 0.66, 0.66, 0.66, 0.66, 0.66, 0.67, 0.67, 0.67, 0.67, 0.67],
-                [0.66, 0.66, 0.67, 0.67, 0.67, 0.67, 0.67, 0.68, 0.68, 0.68, 0.68],
-                [0.67, 0.67, 0.67, 0.68, 0.68, 0.68, 0.68, 0.68, 0.68, 0.69, 0.69],
-                [0.68, 0.68, 0.68, 0.68, 0.68, 0.69, 0.69, 0.69, 0.69, 0.69, 0.70],
-                [0.68, 0.69, 0.69, 0.69, 0.69, 0.69, 0.70, 0.70, 0.70, 0.70, 0.70],
-                [0.69, 0.69, 0.70, 0.70, 0.70, 0.70, 0.70, 0.70, 0.71, 0.71, 0.71],
-                [0.70, 0.70, 0.70, 0.70, 0.70, 0.71, 0.71, 0.71, 0.71, 0.71, 0.72],
-                [0.70, 0.71, 0.71, 0.71, 0.71, 0.71, 0.71, 0.72, 0.72, 0.72, 0.72],
-                [0.71, 0.71, 0.71, 0.72, 0.72, 0.72, 0.72, 0.72, 0.72, 0.73, 0.73],
-                [0.72, 0.72, 0.72, 0.72, 0.72, 0.72, 0.73, 0.73, 0.73, 0.73, 0.73],
-                [0.72, 0.72, 0.72, 0.73, 0.73, 0.73, 0.73, 0.73, 0.73, 0.74, 0.74],
-                [0.73, 0.73, 0.73, 0.73, 0.73, 0.73, 0.74, 0.74, 0.74, 0.74, 0.74],
-                [0.73, 0.73, 0.73, 0.74, 0.74, 0.74, 0.74, 0.74, 0.74, 0.75, 0.75],
-                [0.74, 0.74, 0.74, 0.74, 0.74, 0.74, 0.75, 0.75, 0.75, 0.75, 0.75],
-                [0.74, 0.74, 0.74, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.76],
-                [0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.76, 0.76, 0.76, 0.76],
-                [0.75, 0.75, 0.75, 0.75, 0.76, 0.76, 0.76, 0.76, 0.76, 0.76, 0.76],
-                [0.75, 0.76, 0.76, 0.76, 0.76, 0.76, 0.76, 0.76, 0.76, 0.77, 0.77],
-                [0.76, 0.76, 0.76, 0.76, 0.76, 0.76, 0.77, 0.77, 0.77, 0.77, 0.77],
-                [0.76, 0.76, 0.76, 0.77, 0.77, 0.77, 0.77, 0.77, 0.77, 0.77, 0.77],
-                [0.76, 0.77, 0.77, 0.77, 0.77, 0.77, 0.77, 0.77, 0.78, 0.78, 0.78],
-                [0.77, 0.77, 0.77, 0.77, 0.77, 0.77, 0.78, 0.78, 0.78, 0.78, 0.78],
-                [0.77, 0.77, 0.77, 0.78, 0.78, 0.78, 0.78, 0.78, 0.78, 0.78, 0.78],
-                [0.78, 0.78, 0.78, 0.78, 0.78, 0.78, 0.78, 0.78, 0.78, 0.79, 0.79]
-              ];
-    
-            var a = document.getElementById("length1").value;
-            var b = document.getElementById("width1").value;
-            var c = document.getElementById("height1").value;
-            var d = document.getElementById("lyeconc1").value;
-            var e = document.getElementById("superfat1").value; 
+
+            var sgtable = [1.2079,
+                1.2187,
+                1.2296,
+                1.2404,
+                1.2512,
+                1.2620,
+                1.2727,
+                1.2835,
+                1.2942,
+                1.3047,
+                1.3152,
+                1.3257,
+                1.3362,
+                1.3464,
+                1.3565,
+                1.3667,
+                1.3768,
+                1.3867,
+                1.3966,
+                1.4065,
+                1.4164,
+                1.4259,
+                1.4355,
+                1.4450,
+                1.4545,
+                1.4639,
+                1.4734,
+                1.4828,
+                1.4922,
+                1.5016,
+                1.5109];
+
+            var a = document.getElementById("volume1").value; 
+            var b = document.getElementById("lyeconc1").value;
+            var c = document.getElementById("superfat1").value; 
+            var d = document.getElementById("sapvalue1").value; 
             
-            var voln = (a * b  * c) ;
-            var ration = matrix[d-20][e];        
+            // var voln = (a * b  * c) ;
+            // var ration = sgtable[d-20];        
                     
-            var checkBox = document.getElementById("metricswitch");
-            if (checkBox.checked == true){
-                var suf1 = " ci.";
-                var suf2 = " oz/ci.";
-                var ration = ration * .578;
-                var oilgrn = ration * voln;
-                var suf3 = " ounces ";
-            }
-            else{      
-                var suf1 = " cm3.";
-                var suf2 = " gr/cm3.";
-                var suf3 = " grams ";
-                var oilgrn = ration * voln;
-            }
+            var naoh_gr = d * 1;
+            var h2o_gr = (100 - b) / b * d;
+            var lye_gr = naoh_gr + h2o_gr;
+           
+            var oil_gr = 1 + (c / 100);
 
-            document.getElementById("result1").innerHTML = "Soap mold volume is ".concat(voln.toFixed(2) ,suf1);
-            document.getElementById("result2").innerHTML = "Ratio of oil weight to volume is ".concat(ration.toFixed(2),suf2);
+            var lye_cc = (lye_gr) / sgtable[ b - 20 ];
+            var oil_cc = oil_gr / .92;
+            var tot_cc = lye_cc + oil_cc;
+
+            var ratio_met = oil_gr / tot_cc;
+            var ratio_imp = ratio_met * .578; 
+
+            var suf1m = " cm3.";
+            var suf2m = " gr/cm3";
+            var suf3m = " grams ";
+            var suf1i = " in3.";
+            var suf2i = " oz/in3";
+            var suf3i = " ounces";
 
             var checkBox = document.getElementById("metricswitch");
+
             if (checkBox.checked == true){
-                document.getElementById("result3").innerHTML = oilgrn.toFixed(2).concat(suf3," of oils are required.");    
+                document.getElementById("result2").innerHTML = "Ratio of oil weight to volume is ".concat(ratio_imp.toFixed(3),suf2i);
+                document.getElementById("result3").innerHTML = (ratio_met * a).toFixed(0) + " " + suf3i + " of oils are required.";
             }    
             else{
-                document.getElementById("result3").innerHTML = oilgrn.toFixed(0).concat(suf3," of oils are required.");
+                document.getElementById("result2").innerHTML = "Ratio of oil weight to volume is ".concat(ratio_met.toFixed(3),suf2m);
+                document.getElementById("result3").innerHTML = (ratio_met * a).toFixed(0) + " " + suf3m + " of oils are required.";
             }    
-            
         }
 
 function switchit() {
 
   // Get the checkbox
     var checkBox = document.getElementById("metricswitch");
-    var lendesc = "Length ";
-    var widthdesc = "Width ";
-    var heightdesc = "Height ";
     var units = "(cm.): ";
     var metricswitchdesc = "Switch to Imperial ==>";
-    var length1n = document.getElementById("length1").value;
-    var width1n = document.getElementById("width1").value;
-    var height1n = document.getElementById("height1").value;
-    // console.log(length1n.value)
-
+    var volume1 = document.getElementById("volume1").value;
+    var voldesc = "Volume ";
+    // console.log(volume1.value)
 
   // If the checkbox is checked, display the output text
 
   if (checkBox.checked == true){
-        units = "(in.): ";
+        units = "(cubic inches): ";
         metricswitchdesc = "Switch to Metric ===>";
-        length1n = length1n / 2.54;
-        width1n = width1n / 2.54;
-        height1n = height1n / 2.54;
+        volume1 = volume1 / 16.388;
+        
     } 
     else {
-        units = "(cm.):";
+        units = "(cubic centimetres):";
         metricswitchdesc = "Switch to Imperial ==>";
-        length1n = length1n * 2.54;
-        width1n = width1n * 2.54;
-        height1n = height1n * 2.54;
+        volume1 = volume1 * 16.388;
+       
     }
 
     // console.log(length1n.value)
 
-    document.getElementById("length1").value=length1n.toFixed(3);
-    document.getElementById("width1").value=width1n.toFixed(3);
-    document.getElementById("height1").value=height1n.toFixed(3);
-
+    document.getElementById("volume1").value=volume1.toFixed(2);
     document.getElementById("metricswitchdesc").innerHTML=metricswitchdesc;
-    document.getElementById("lendesc").innerHTML=lendesc.concat(units);
-    document.getElementById("widthdesc").innerHTML=widthdesc.concat(units);
-    document.getElementById("heightdesc").innerHTML=heightdesc.concat(units);
-
+    document.getElementById("voldesc").innerHTML=voldesc.concat(units);
+    
     CalculateResults();
 }
