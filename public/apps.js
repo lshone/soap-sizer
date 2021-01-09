@@ -48,10 +48,7 @@ function CalculateResults() {
             var a = document.getElementById("volume1").value; 
             var b = document.getElementById("lyeconc1").value;
             var c = document.getElementById("superfat1").value; 
-            var d = document.getElementById("sapvalue1").value; 
-            
-            // var voln = (a * b  * c) ;
-            // var ration = sgtable[d-20];        
+            var d = document.getElementById("sapvalue1").value;       
                     
             var naoh_gr = d * 1;
             var h2o_gr = (100 - b) / b * d;
@@ -66,10 +63,8 @@ function CalculateResults() {
             var ratio_met = oil_gr / tot_cc;
             var ratio_imp = ratio_met * .578; 
 
-            var suf1m = " cm3.";
             var suf2m = " gr/cm3";
-            var suf3m = " grams ";
-            var suf1i = " in3.";
+            var suf3m = " grams ";            
             var suf2i = " oz/in3";
             var suf3i = " ounces";
 
@@ -110,7 +105,7 @@ function switchit() {
        
     }
 
-    // console.log(length1n.value)
+    // console.log(volume1.value)
 
     document.getElementById("volume1").value=volume1.toFixed(2);
     document.getElementById("metricswitchdesc").innerHTML=metricswitchdesc;
