@@ -13,6 +13,7 @@ function CalculateResults() {
     //     .then(doc => {
     //         const data = doc.data();
 
+    // a table of specific gravity values for lye. First entry is 20%
             var sgtable = [1.2079,
                 1.2187,
                 1.2296,
@@ -96,13 +97,11 @@ function switchit() {
         units = "(cubic inches): ";
         metricswitchdesc = "Switch to Metric ===>";
         volume1 = volume1 / 16.388;
-        
     } 
     else {
         units = "(cubic centimetres):";
         metricswitchdesc = "Switch to Imperial ==>";
         volume1 = volume1 * 16.388;
-       
     }
 
     // console.log(volume1.value)
