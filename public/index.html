@@ -29,7 +29,7 @@
     <P> 
       <table>
         <tr>
-          <td id="metricswitchdesc"> Switch to imperial ==></td>
+          <td style=text-align:right; id="metricswitchdesc" width=240> Switch to imperial ==></td>
           <td><label class="switch">
               <input type="checkbox" onclick="switchit()" id="metricswitch">
               <span class="slider round"></span>
@@ -42,18 +42,18 @@
     <script src="apps.js"></script>
 
     <table border-collapse: colapse>
-      <tr><td style=text-align:right; id="voldesc">volume (cubic Centimeters): </td>     
+      <tr><td  style=text-align:right; width=240 id="voldesc" >volume (cubic Centimeters): </td>     
           <td> <input Name=vol1 id="volume1" value=1000></td></tr>
 
       <tr><td style=text-align:right;>Lye Conc.(%): </td>
-          <td><input Name=LyeConc1 id="lyeconc1" type="number" value="30"></td>
-          <td>valid values 20-50</td></tr>
+          <td><input Name=LyeConc1 id="lyeconc1" type="number" value="30" min="20" max="50" ></td>
+          <td></td></tr>
 
       <tr><td style=text-align:right;>SuperFat(%): </td>
           <td><input Name=Superfat1 id="superfat1" type="number" value="5"></td>
           <td></td></tr>
           
-      <tr><td style=text-align:right; id="sapvalue">Saponification value: </td>
+      <tr><td style=text-align:right; id="sapvalue">Saponification value (NaOH): </td>
         <td><input Name=sapvalue1 id="sapvalue1" value=".1481"></td></tr>
 
     </table>

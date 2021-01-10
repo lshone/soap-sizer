@@ -14,37 +14,37 @@ function CalculateResults() {
     //         const data = doc.data();
 
     // a table of specific gravity values for lye. First entry is 20%
-            var sgtable = [1.2079,
-                1.2187,
-                1.2296,
-                1.2404,
-                1.2512,
-                1.2620,
-                1.2727,
-                1.2835,
-                1.2942,
-                1.3047,
-                1.3152,
-                1.3257,
-                1.3362,
-                1.3464,
-                1.3565,
-                1.3667,
-                1.3768,
-                1.3867,
-                1.3966,
-                1.4065,
-                1.4164,
-                1.4259,
-                1.4355,
-                1.4450,
+            var sgtable = [1.2296,
+                1.2406,
+                1.2518,
+                1.2629,
+                1.2741,
+                1.2851,
+                1.2962,
+                1.3072,
+                1.3182,
+                1.3292,
+                1.3400,
+                1.3508,
+                1.3614,
+                1.3724,
+                1.3828,
+                1.3932,
+                1.4030,
+                1.4140,
+                1.4242,
+                1.4343,
+                1.4435,
                 1.4545,
-                1.4639,
-                1.4734,
-                1.4828,
-                1.4922,
-                1.5016,
-                1.5109];
+                1.4643,
+                1.4740,
+                1.4825,
+                1.4935,
+                1.5032,
+                1.5128,
+                1.5210,
+                1.5320,
+                1.5400];
 
             var a = document.getElementById("volume1").value; 
             var b = document.getElementById("lyeconc1").value;
@@ -88,6 +88,7 @@ function switchit() {
     var units = "(cm.): ";
     var metricswitchdesc = "Switch to Imperial ==>";
     var volume1 = document.getElementById("volume1").value;
+    var volume2 = volume1;
     var voldesc = "Volume ";
     // console.log(volume1.value)
 
@@ -96,17 +97,17 @@ function switchit() {
   if (checkBox.checked == true){
         units = "(cubic inches): ";
         metricswitchdesc = "Switch to Metric ===>";
-        volume1 = volume1 / 16.388;
+        volume2 = (volume1 / 16.39).toFixed(2);
     } 
     else {
         units = "(cubic centimetres):";
         metricswitchdesc = "Switch to Imperial ==>";
-        volume1 = volume1 * 16.388;
+        volume2 = (volume1 * 16.39).toFixed(0);
     }
 
     // console.log(volume1.value)
 
-    document.getElementById("volume1").value=volume1.toFixed(2);
+    document.getElementById("volume1").value=volume2;
     document.getElementById("metricswitchdesc").innerHTML=metricswitchdesc;
     document.getElementById("voldesc").innerHTML=voldesc.concat(units);
     
