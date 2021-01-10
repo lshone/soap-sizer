@@ -73,7 +73,7 @@ function CalculateResults() {
 
             if (checkBox.checked == true){
                 document.getElementById("result2").innerHTML = "Ratio of oil weight to volume is ".concat(ratio_imp.toFixed(3),suf2i);
-                document.getElementById("result3").innerHTML = (ratio_met * a).toFixed(0) + " " + suf3i + " of oils are required.";
+                document.getElementById("result3").innerHTML = (ratio_met * a).toFixed(2) + " " + suf3i + " of oils are required.";
             }    
             else{
                 document.getElementById("result2").innerHTML = "Ratio of oil weight to volume is ".concat(ratio_met.toFixed(3),suf2m);
